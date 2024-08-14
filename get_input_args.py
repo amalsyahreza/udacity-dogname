@@ -48,7 +48,7 @@ def get_input_args():
 
     parser.add_argument('-d', '--dir', type=str, default='pet_images/', help='Image folder directory (a string, default pet_images)')
 
-    parser.add_argument('-a', '--arch', type=str, default='vgg', help='CNN Model Architecture (a string, default \'vgg\')')
+    parser.add_argument('-a', '--arch', type=str, default='vgg', choices=['vgg', 'alexnet', 'resnet'] help='CNN Model Architecture (a string, default \'vgg\')')
 
     parser.add_argument('-f', '--dogfile', type=str, default='dognames.txt', help='Text File with Dog Names (a string, default \'dognames.txt\')')
 
