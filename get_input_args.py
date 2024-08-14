@@ -18,10 +18,6 @@
 import argparse
 
 
-# DONE 1: Define get_input_args function below please be certain to replace None
-#       in the return statement with parser.parse_args() parsed argument
-#       collection that you created with this function
-#
 def get_input_args():
     """
     Retrieves and parses the 3 command line arguments provided by the user when
@@ -42,8 +38,6 @@ def get_input_args():
     # Create Parse using ArgumentParser
 
     parser = argparse.ArgumentParser(description='Model argument parser')
-
-    # Create 3 command line arguments as mentioned above using add_argument() from ArguementParser method
 
     parser.add_argument(
         '-d',
@@ -70,6 +64,4 @@ def get_input_args():
         help='Text File with Dog Names (a string, default \'dognames.txt\')'
     )
 
-    # Replace None with parser.parse_args() parsed argument collection that
-    # you created with this function
     return parser.parse_args()
