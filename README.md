@@ -19,4 +19,4 @@ The logs can be found under `logs/` directoreies
 
 ## Results
 
-The scripts for run*models*\*.sh modified a bit to generate the .txt under `results/` directory
+The bash scripts to run the models were modified a bit to generate the .txt under `results/` directory
