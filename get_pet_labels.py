@@ -21,13 +21,10 @@ from os import listdir
 
 from logger import Logger
 
-# TODO 2: Define get_pet_labels function below please be certain to replace None
-#       in the return statement with results_dic dictionary that you create
-#       with this function
-#
-
 
 def extract_breed_name(name):
+    """A small function to extract the breed name based on the splitter '_'
+    """
     splitter = "_"
     split_position = name.rfind(splitter)
 
