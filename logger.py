@@ -4,7 +4,7 @@ from logging.handlers import RotatingFileHandler
 
 
 class Logger:
-    def __init__(self, name, log_file=None, level=logging.DEBUG, max_bytes=1024 * 1024, backup_count=3):
+    def __init__(self, name="DogName", log_file="logs/console.log", level=logging.INFO, max_bytes=1024 * 1024, backup_count=3):
         """
         Initializes a logger with a specific name, logging level, and optional file output.
 

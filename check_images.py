@@ -23,7 +23,6 @@
 #    python check_images.py --dir pet_images/ --arch vgg --dogfile dognames.txt
 ##
 
-import logging
 from time import time
 
 from adjust_results4_isadog import adjust_results4_isadog
@@ -40,7 +39,8 @@ from print_results import print_results
 
 # Main program function defined below
 def main():
-    logger = Logger(name="DogName", log_file="logs/console.log", level=logging.INFO).get_logger()
+    # Initialize logger
+    logger = Logger().get_logger()
 
     # Measures total program runtime by collecting start time
     start_time = time()

@@ -19,6 +19,8 @@
 # Imports python modules
 from os import listdir
 
+from logger import Logger
+
 # TODO 2: Define get_pet_labels function below please be certain to replace None
 #       in the return statement with results_dic dictionary that you create
 #       with this function
@@ -49,8 +51,8 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
-    # Replace None with the results_dic dictionary that you created with this
-    # function
+    # Initialize logger
+    logger = Logger().get_logger()
 
     # Creates list of files in directory
     in_files = listdir(image_dir)
@@ -65,7 +67,7 @@ def get_pet_labels(image_dir):
     # of the file that contain the pet image label
     for filename in in_files:
 
-        # Skips file if starts with . (like .DS_Store of Mac OSX) because it
+        # Skips file if starts with '.' (like .DS_Store of Mac OSX) because it
         # isn't an pet image file
         if filename.startswith('.'):
             continue
@@ -87,6 +89,6 @@ def get_pet_labels(image_dir):
         if filename not in results_dic:
             results_dic[filename] = [pet_label]
         else:
-            print(f"** Warning: Duplicate files exist in directory: {filename}")
+            logger.warning(f"Warning: Duplicate files exist in directory: {filename}")
 
     return results_dic
