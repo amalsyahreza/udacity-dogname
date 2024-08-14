@@ -24,11 +24,13 @@ from os import listdir
 #       with this function
 #
 
+
 def extract_breed_name(name):
     splitter = "_"
     split_position = name.rfind(splitter)
 
     return name[:split_position].replace('_', ' ').lower()
+
 
 def get_pet_labels(image_dir):
     """
@@ -77,7 +79,6 @@ def get_pet_labels(image_dir):
         #          accessed by in_files[idx]. Be certain to place the
         #          extracted dog breed name in the variable pet_label
         #          that's created as an empty string ABOVE
-
 
         # If filename doesn't already exist in dictionary add it and it's
         # pet label - otherwise print an error message because indicates
