@@ -41,7 +41,7 @@ from print_results import print_results
 
 # Main program function defined below
 def main():
-    logger = Logger(name="DogName", log_file="logs/console.log", level=logging.DEBUG).get_logger()
+    logger = Logger(name="DogName", log_file="logs/console.log", level=logging.INFO).get_logger()
 
     # DONE 0: Measures total program runtime by collecting start time
     start_time = time()
@@ -85,6 +85,10 @@ def main():
 
     classify_images(in_arg.dir, results, in_arg.arch)
 
+    logger.debug(f"in_arg.dir: {in_arg.dir}")
+    logger.debug(f"results.dir: {results}")
+    logger.debug(f"in_arg.arch: {in_arg.arch}")
+
     # Function that checks Results Dictionary using results
 
     check_classifying_images(results)
@@ -99,6 +103,9 @@ def main():
     # model can correctly classify dog images as dogs (regardless of breed)
     adjust_results4_isadog(results, in_arg.dogfile)
 
+    logger.debug(f"results.dir: {results}")
+    logger.debug(f"in_arg.arch: {in_arg.arch}")
+
     # Function that checks Results Dictionary for is-a-dog adjustment using results
     check_classifying_labels_as_dogs(results)
 
@@ -109,6 +116,9 @@ def main():
     # Calculates results of run and puts statistics in the Results Statistics
     # Dictionary - called results_stats
     results_stats = calculates_results_stats(results)
+
+    logger.debug(f"results: {results}")
+    logger.debug(f"results_stats: {results_stats}")
 
     # Function that checks Results Statistics Dictionary using results_stats
     check_calculating_results(results, results_stats)
@@ -132,7 +142,7 @@ def main():
     minutes = int((tot_time % 3600) // 60)
     seconds = int(tot_time % 60)
 
-    print(f"\n** Total Elapsed Runtime: {hours:02}:{minutes:02}:{seconds:02}")
+    logger.info(f"Total Elapsed Runtime: {hours:02}:{minutes:02}:{seconds:02}")
 
 
 # Call to main function to run the program
