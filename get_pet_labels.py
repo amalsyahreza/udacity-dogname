@@ -77,5 +77,4 @@ def get_pet_labels(image_dir):
         else:
             logger.warning(f"Duplicate files exist in directory: {filename}")
 
-    logger.info(f"results_dic: {results_dic}")
     return results_dic
