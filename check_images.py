@@ -23,6 +23,7 @@
 #    python check_images.py --dir pet_images/ --arch vgg --dogfile dognames.txt
 ##
 
+import logging
 # Imports time() and sleep() functions from time module
 from time import time
 
@@ -32,6 +33,7 @@ from classify_images import classify_images
 # Imports functions created for this program
 from get_input_args import get_input_args
 from get_pet_labels import get_pet_labels
+from logger import Logger
 # Imports print functions that check the lab
 from print_functions_for_lab_checks import *
 from print_results import print_results
@@ -39,8 +41,12 @@ from print_results import print_results
 
 # Main program function defined below
 def main():
+    logger = Logger(name="DogName", log_file="logs/console.log", level=logging.DEBUG).get_logger()
+
     # DONE 0: Measures total program runtime by collecting start time
     start_time = time()
+
+    logger.info(f"Application started at {start_time}")
 
     # DONE 1: Define get_input_args function within the file get_input_args.py
     # This function retrieves 3 Command Line Arugments from user as input from
@@ -48,6 +54,8 @@ def main():
     # the collection of these command line arguments from the function call as
     # the variable in_arg
     in_arg = get_input_args()
+
+    logger.debug(f"get_input_args {in_arg}")
 
     # Function that checks command line arguments using in_arg
     check_command_line_arguments(in_arg)
@@ -60,6 +68,8 @@ def main():
     # This function creates the results dictionary that contains the results,
     # this dictionary is returned from the function call as the variable results
     results = get_pet_labels(in_arg.dir)
+
+    logger.debug(f"results: {results}")
 
     # Function that checks Pet Images in the results Dictionary using results
     check_creating_pet_image_labels(results)
