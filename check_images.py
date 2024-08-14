@@ -23,7 +23,7 @@
 #    python check_images.py --dir pet_images/ --arch vgg --dogfile dognames.txt
 ##
 
-## Imports time() and sleep() functions from time module
+# Imports time() and sleep() functions from time module
 from time import sleep, time
 
 from adjust_results4_isadog import adjust_results4_isadog
@@ -42,7 +42,6 @@ def main():
     # DONE 0: Measures total program runtime by collecting start time
     start_time = time()
 
-
     # DONE 1: Define get_input_args function within the file get_input_args.py
     # This function retrieves 3 Command Line Arugments from user as input from
     # the user running the program from a terminal window. This function returns
@@ -52,7 +51,6 @@ def main():
 
     # Function that checks command line arguments using in_arg
     check_command_line_arguments(in_arg)
-
 
     # TODO 2: Define get_pet_labels function within the file get_pet_labels.py
     # Once the get_pet_labels function has been defined replace 'None'
@@ -94,7 +92,6 @@ def main():
     # Function that checks Results Dictionary for is-a-dog adjustment using results
     check_classifying_labels_as_dogs(results)
 
-
     # TODO 5: Define calculates_results_stats function within the file calculates_results_stats.py
     # This function creates the results statistics dictionary that contains a
     # summary of the results statistics (this includes counts & percentages). This
@@ -105,7 +102,6 @@ def main():
 
     # Function that checks Results Statistics Dictionary using results_stats
     check_calculating_results(results, results_stats)
-
 
     # TODO 6: Define print_results function within the file print_results.py
     # Once the print_results function has been defined replace 'None'
@@ -120,7 +116,7 @@ def main():
     end_time = time()
 
     # DONE 0: Computes overall runtime in seconds & prints it in hh:mm:ss format
-    #calculate difference between end time and start time
+    # calculate difference between end time and start time
     tot_time = end_time - start_time
     hours = int(tot_time // 3600)
     minutes = int((tot_time % 3600) // 60)
