@@ -87,9 +87,10 @@ def get_pet_labels(image_dir):
         # duplicate files (filenames)
 
         if filename not in results_dic:
-            logger.info(f"Add {pet_label} to {filename}")
+            logger.info(f"\'{filename}\' labelled as \'{pet_label}\'")
             results_dic[filename] = [pet_label]
         else:
-            logger.warning(f"Warning: Duplicate files exist in directory: {filename}")
+            logger.warning(f"Duplicate files exist in directory: {filename}")
 
+    logger.info(f"results_dic: {results_dic}")
     return results_dic
