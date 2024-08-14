@@ -92,10 +92,13 @@ def print_results(results_dic, results_stats_dic, model,
 
     # IF print_incorrect_dogs == True AND there were images incorrectly
     # classified as dogs or vice versa - print out these cases
-    if (print_incorrect_dogs
-                and ((results_stats_dic['n_correct_dogs'] + results_stats_dic['n_correct_notdogs'])
-                     != results_stats_dic['n_images'])
-            ):
+    if (
+        print_incorrect_dogs
+        and ((
+            results_stats_dic['n_correct_dogs']
+            + results_stats_dic['n_correct_notdogs'])
+            != results_stats_dic['n_images'])
+    ):
         print("\nINCORRECT Dog/NOT Dog Assignments:")
 
         # process through results dict, printing incorrectly classified dogs
@@ -124,9 +127,11 @@ def print_results(results_dic, results_stats_dic, model,
 
     # IF print_incorrect_breed == True AND there were dogs whose breeds
     # were incorrectly classified - print out these cases
-    if (print_incorrect_breed
-                and (results_stats_dic['n_correct_dogs'] != results_stats_dic['n_correct_breed'])
-            ):
+    if (
+        print_incorrect_breed
+        and (results_stats_dic['n_correct_dogs']
+             != results_stats_dic['n_correct_breed'])
+    ):
         print("\nINCORRECT Dog Breed Assignment:")
 
         # process through results dict, printing incorrectly classified breeds

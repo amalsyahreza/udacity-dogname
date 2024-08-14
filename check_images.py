@@ -24,7 +24,7 @@
 ##
 
 # Imports time() and sleep() functions from time module
-from time import sleep, time
+from time import time
 
 from adjust_results4_isadog import adjust_results4_isadog
 from calculates_results_stats import calculates_results_stats
