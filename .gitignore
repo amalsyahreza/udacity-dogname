@@ -110,5 +110,4 @@ dmypy.json
 # profiling
 prof/
 
-*.txt
-results/
+results/*.txt
